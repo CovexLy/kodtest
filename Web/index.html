@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  	<link rel="stylesheet" href="style.css">
+  	<script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+	<ons-navigator id="navigator" animation="fade">
+		<ons-toolbar id="home-toolbar" style="max-width:600px">
+			<ons-button class="button button--outline" style="width:500%; text-align:center" modifier="quiet" onclick="swap('list.html')">List</ons-button>
+			<ons-button class="button button--outline" style="width:500%; text-align:center" modifier="quiet" onclick="swap('create.html')">Create</ons-button>
+		</ons-toolbar>
+		<ons-page id="Welcome">
+			<div style="text-align: center; margin-top: 100px; max-width:600px">
+				<p>
+					<ons-button modifier="quiet" onclick="console.log(this.id);">Project 'Kodtest'</ons-button>
+				</p>
+				<p>
+					<ons-button modifier="quiet" disabled>Click buttons above to begin</ons-button>
+				</p>
+			</div>
+		</ons-page>
+	</ons-navigator>
+	
+	<template id="list.html">
+		<ons-page id="list">
+		</ons-page>
+	</template>
+	
+	<template id="create.html">
+		<ons-page id="create">
+			<span>
+				<ons-button modifier="quiet" style="margin-top:50px"">Create new business card.</ons-button>
+				<div><input id="f_name" class="form text-input text-input--material" placeholder="First name" type="text" required></div>
+				<br />
+				<div><input id="f_surName" class="form text-input text-input--material" placeholder="Last name" type="text" required></div>
+				<br />
+				<div><input id="f_tel" class="form text-input text-input--material" placeholder="Telephone number" type="number" required></div>
+				<br />
+				<div><input id="f_email" class="form text-input text-input--material" placeholder="E-mail address" type="email" required></div>
+				<br />
+				<div><input id="f_image" class="form text-input text-input--material" placeholder="Image encoding" type="text" required></div>
+				<ons-button id="f_submit" style="margin: 30px 0 0 20px" onclick="submit()">Create new business card.</ons-button>
+			</span>
+		</ons-page>
+	</template>
+	
+	<template id="edit.html">
+		<ons-page id="edit">
+			<span>
+				<ons-button modifier="quiet" style="margin-top:50px"">Edit business card.</ons-button>
+				<div><input id="e_name" class="form text-input text-input--material" placeholder="First name" type="text" required></div>
+				<br />
+				<div><input id="e_surName" class="form text-input text-input--material" placeholder="Last name" type="text" required></div>
+				<br />
+				<div><input id="e_tel" class="form text-input text-input--material" placeholder="Telephone number" type="number" required></div>
+				<br />
+				<div><input id="e_email" class="form text-input text-input--material" placeholder="E-mail address" type="email" required></div>
+				<br />
+				<div><input id="e_image" class="form text-input text-input--material" placeholder="Image encoding" type="text" required></div>
+				<ons-button id="e_submit" style="margin: 30px 0 0 20px" onclick="submit()">Update business card.</ons-button>
+			</span>
+		</ons-page>
+	</template>
+</body>
+</html>
